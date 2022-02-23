@@ -40,7 +40,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.2.0</kotlin.version>
+        <kotlin.version>1.6.10</kotlin.version>
         <aether.version>1.1.0</aether.version>
         <aether.maven.provider.version>3.2.5</aether.maven.provider.version>
         <args4j.version>2.33</args4j.version>
@@ -164,7 +164,7 @@
                         ./mvnw clean verify
 
                         # publish a new version
-                        ./mvnw versions:set -DnewVersion=&lt;version&gt;
+                        ./mvnw versions:set -DnewVersion=&lt;version>
                         ./mvnw -Ddeploy=maven-central
                         ./mvnw -Ddeploy=github
                         ./mvnw -Ddeploy=github-release-notes -N
