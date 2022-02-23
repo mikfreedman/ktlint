@@ -137,7 +137,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-nop</artifactId>
-            <version>1.6.2</version>
+            <version>1.7.35</version>
         </dependency>
         <dependency>
             <groupId>args4j</groupId>
@@ -178,12 +178,7 @@
                         <phase>verify</phase>
                         <configuration>
                             <target name="ktlint">
-                                <java dir="${basedir}${file.separator}.."
-                                      classname="com.github.shyiko.ktlint.Main"
-                                      classpathref="maven.runtime.classpath"
-                                      fork="true"
-                                      failonerror="true"
-                                      taskname="lint"/>
+                                <java dir="${basedir}${file.separator}.." classname="com.github.shyiko.ktlint.Main" classpathref="maven.runtime.classpath" fork="true" failonerror="true" taskname="lint"/>
                             </target>
                         </configuration>
                         <goals>
@@ -194,12 +189,7 @@
                         <id>ktlint-format</id>
                         <configuration>
                             <target name="ktlint">
-                                <java dir="${basedir}${file.separator}.."
-                                      classname="com.github.shyiko.ktlint.Main"
-                                      classpathref="maven.runtime.classpath"
-                                      fork="true"
-                                      failonerror="true"
-                                      taskname="format">
+                                <java dir="${basedir}${file.separator}.." classname="com.github.shyiko.ktlint.Main" classpathref="maven.runtime.classpath" fork="true" failonerror="true" taskname="format">
                                     <arg value="-F"/>
                                 </java>
                             </target>
@@ -282,10 +272,8 @@
                                 </goals>
                                 <configuration>
                                     <transformers>
-                                        <transformer implementation=
-                                                         "org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-                                        <transformer implementation=
-                                                         "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                        <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                             <mainClass>com.github.shyiko.ktlint.Main</mainClass>
                                         </transformer>
                                     </transformers>
